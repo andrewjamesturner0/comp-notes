@@ -20,9 +20,9 @@ On 10.1+ there is a sysctl telling zfs to use 4096 byte sectors.
 
     # sysctl vfs.zfs.min_auto_ashift=12
 
-Create the pool, enabling compression, turning off atime and without assigning a mountpoint.
+Create the pool, without assigning a mountpoint.
 
-    # zpool create -o altroot=/mnt -o compress=lz4 -o atime=off -m none system gpt/system
+    # zpool create -o altroot=/mnt -m none system gpt/system
 
 ### Send a snapshot of the current system to the new zpool
 
