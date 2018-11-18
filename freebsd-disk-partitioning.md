@@ -6,10 +6,25 @@ date: 2014-12-05
 
 ## gpart
 
+    # gpart destroy -F <device>
     # gpart create -s gpt <device>
-    # gpart add -a 4k -t freebsd-zfs -l <name> <device>
 
-* Use the -s option if you want to create a partition of a given size (e.g. -s 10g). Otherwise, the partition will fill the space available on the device.
+### Boot partition:
+
+    # gpart add -a 1M -t freebsd-boot -s 512 -l <name> <device>
+    # gpart bootcode -b /boot/pmbr -p /boot/gptzfsboot -i 1 <device>
+
+### zfs partition:
+
+    # gpart add -t freebsd-zfs -a 1M -s <size> -l <name> <device>
+
+### swap partition:
+
+    # gpart add -t freebsd-swap -a 1M -l <name> <device>
+
+* Use the -s option if you want to create a partition of a given size (e.g. -s
+  10G). Otherwise, the partition will fill the space available on the device.
+
 
 ## GELI Encrypted disks
 
