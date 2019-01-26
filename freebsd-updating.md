@@ -13,7 +13,7 @@ date: 2015-12-05
 
 Upgrade to new release
 
-    # freebsd-update upgrade -r 10.X-RELEASE
+    # freebsd-update upgrade -r XX.X-RELEASE
     # freebsd-update install
     # reboot
 
