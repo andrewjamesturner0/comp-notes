@@ -177,7 +177,7 @@ Install arch:
     # pacman -r /mnt \
         --cachedir=/mnt/var/cache/pacman/pkg \
         --noconfirm \
-        -Sy base base-devel vim openssh grub
+        -Sy base linux linux-firmware base-devel vim openssh grub
     # cp -a /etc/pacman.d/gnupg /mnt/etc/pacman.d/
     # cp -a /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/
 
